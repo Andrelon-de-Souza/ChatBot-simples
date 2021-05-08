@@ -15,7 +15,7 @@ public class RespostaHora extends Resposta{
         String frase = hora;
         String palavras[] = frase.split(" ");
         
-        if(palavras.equals("hora") || palavras.equals("horas")) {
+        if(palavras.equals("horas")) {
          
         return true;
         

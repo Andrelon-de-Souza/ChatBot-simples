@@ -2,7 +2,7 @@ package projeto.n1;
 
 public abstract class Resposta {
     
-    private String entrada;
+    protected String entrada;
     
     public Resposta(String entrada) {
         

@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        
         ChatBot bot = new ChatBot();
         
         // Criando as resposta:
@@ -21,17 +22,16 @@ public class Main {
         piada.add("Qual é o mercado que voa? É o super-mercado!");
         Resposta respConta = new RespostaAleatoria("conta", piada);
         
-        
+        System.out.println (" ------------------------------------");
+        System.out.println (" Iniciando o chatbot ");
+        System.out.println (" ------------------------------------");
         Scanner entrada = new Scanner(System.in);
         String texto;
         while(true) {
-            System.out.println("Agora são: " + respHora.produz());
-            System.out.println("Hoje é dia: " + respData.produz());
-            System.out.println(respSimples.produz());
-            System.out.println("O conta atual está em " + respContador.produz());
-            //System.out.println("> ");
             texto = entrada.nextLine();
-            //System.out.println(bot.processar(texto));
+            System.out.println("> ");
+            System.out.println(bot.processar(texto));
+            entrada.close();
         }
         
     }
