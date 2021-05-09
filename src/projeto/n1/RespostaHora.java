@@ -12,8 +12,7 @@ public class RespostaHora extends Resposta{
     @Override
     public boolean verifica(String hora) {
         
-        String frase = hora;
-        String palavras[] = frase.split(" ");
+        String palavras[] = hora.split(" ");
         
         if(palavras.equals("horas")) {
          

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class RespostaAleatoria extends Resposta {
     
-    private ArrayList arrayPiada;
+    protected ArrayList arrayPiada;
     
     public RespostaAleatoria(String piada, ArrayList<String> arrayPiada) {
         
@@ -15,8 +15,7 @@ public class RespostaAleatoria extends Resposta {
     @Override
     public boolean verifica(String piada) {
         
-        String frase = piada;
-        String palavras[] = frase.split(" ");
+        String palavras[] = piada.split(" ");
         
         if(palavras.equals("piada")) {
             

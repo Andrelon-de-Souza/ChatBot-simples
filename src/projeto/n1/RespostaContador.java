@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class RespostaContador extends Resposta{
     
-    private int contador;
+    protected int contador;
     
     public RespostaContador(String conta) {
         
@@ -15,8 +15,7 @@ public class RespostaContador extends Resposta{
     @Override
     public boolean verifica(String conta) {
         
-        String frase = conta;
-        String palavras[] = frase.split(" ");
+        String palavras[] = conta.split(" ");
         
         if(palavras.equals("conta")) {
             

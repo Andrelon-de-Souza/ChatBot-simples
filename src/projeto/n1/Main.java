@@ -22,16 +22,27 @@ public class Main {
         piada.add("Qual é o mercado que voa? É o super-mercado!");
         Resposta respConta = new RespostaAleatoria("conta", piada);
         
+        // adicionando as respostas ao chatbot
+        bot.adiciona(respSimples);
+        bot.adiciona(respData);
+        bot.adiciona(respHora);
+        bot.adiciona(respContador);
+        bot.adiciona(respConta);
+        
         System.out.println (" ------------------------------------");
         System.out.println (" Iniciando o chatbot ");
         System.out.println (" ------------------------------------");
         Scanner entrada = new Scanner(System.in);
         String texto;
-        while(true) {
+        char continua = 's';
+        while(continua == 's') {
             texto = entrada.nextLine();
             System.out.println("> ");
             System.out.println(bot.processar(texto));
             entrada.close();
+            System.out.println("Deseja continuar?");
+            continua = entrada.next().charAt(0);
+            
         }
         
     }

@@ -14,8 +14,7 @@ public class RespostaData extends Resposta {
     @Override
     public boolean verifica(String data) {
         
-        String frase = data;
-        String palavras[] = frase.split(" ");
+        String palavras[] = data.split(" ");
         
         if(palavras.equals("dia")) {
         
