@@ -4,9 +4,9 @@ import java.util.Calendar;
 
 public class RespostaHora extends Resposta{
     
-    public RespostaHora(String hora) {
+    public RespostaHora(String entrada) {
         
-        super(hora);
+        super(entrada);
         
     }
     @Override
@@ -14,15 +14,17 @@ public class RespostaHora extends Resposta{
         
         String palavras[] = hora.split(" ");
         
-        if(palavras.equals("horas")) {
+        for(int i = 0; i < palavras.length; i++) {
+            
+        if(palavras[i].equals(entrada)) {
          
         return true;
         
-    }else{
-            
-            return false;
-            
+    }
+        
         }
+        
+        return false;
         
     }
     @Override
@@ -32,7 +34,7 @@ public class RespostaHora extends Resposta{
         int hora = data.get(Calendar.HOUR_OF_DAY); 
         int min = data.get(Calendar.MINUTE);
         
-        return hora + "h" + ":" + min + "min";
+        return "Agora são " + hora + "h" + ":" + min + "min";
         
     }
     

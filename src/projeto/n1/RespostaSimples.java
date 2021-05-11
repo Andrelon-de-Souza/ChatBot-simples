@@ -2,7 +2,7 @@ package projeto.n1;
 
 public class RespostaSimples extends Resposta {
     
-    protected String resp;
+    private String resp;
     
     public RespostaSimples(String entrada, String resp) {
         
@@ -11,19 +11,21 @@ public class RespostaSimples extends Resposta {
         
     }
     @Override
-    public boolean verifica(String entrada) {
+    public boolean verifica(String nome) {
         
-        String palavras[] = entrada.split(" ");
+        String palavras[] = nome.split(" ");
         
-        if(palavras.equals("nome")) {
+        for(int i = 0; i < palavras.length; i++) {
+        
+        if(palavras[i].equals(entrada)) {
         
         return true;
         
-    }else{
-            
-            return false;
-            
+    }
+        
         }
+        
+        return false;
 
     }
     @Override

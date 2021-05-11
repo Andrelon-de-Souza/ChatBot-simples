@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class RespostaContador extends Resposta{
     
-    protected int contador;
+    private int contador;
     
-    public RespostaContador(String conta) {
+    public RespostaContador(String entrada) {
         
-        super(conta);
+        super(entrada);
         this.contador = 0;
         
     }
@@ -17,22 +17,24 @@ public class RespostaContador extends Resposta{
         
         String palavras[] = conta.split(" ");
         
-        if(palavras.equals("conta")) {
+        for(int i = 0; i < palavras.length; i++) {
+        
+        if(palavras[i].equals(entrada)) {
             
                 contador++;
                 return true;
                 
-    }else{
-            
-            return false;
-            
+    }
+        
         }
+        
+        return false;
         
     }
     @Override
     public String produz() {
         
-        return "" + contador;
+        return "A conta atualmente está em " + contador;
         
     }
     

@@ -6,9 +6,9 @@ import java.util.Date;
 
 public class RespostaData extends Resposta {
     
-    public RespostaData(String data) {
+    public RespostaData(String entrada) {
         
-        super(data);
+        super(entrada);
         
     }
     @Override
@@ -16,15 +16,17 @@ public class RespostaData extends Resposta {
         
         String palavras[] = data.split(" ");
         
-        if(palavras.equals("dia")) {
+        for(int i = 0; i < palavras.length; i++) {
+        
+        if(palavras[i].equals(entrada)) {
         
         return true;
         
-    }else{
-            
-            return false;
-            
+    }
+        
         }
+        
+        return false;
         
     }
     @Override
@@ -33,7 +35,7 @@ public class RespostaData extends Resposta {
         DateFormat data = new SimpleDateFormat("dd/MM/yyyy");
         Date date = new Date();
         
-        return data.format(date);
+        return "Hoje é dia " + data.format(date);
         
     }
     

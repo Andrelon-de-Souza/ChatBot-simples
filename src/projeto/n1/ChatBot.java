@@ -1,60 +1,43 @@
 package projeto.n1;
 
+import java.util.ArrayList;
+
 public class ChatBot {
-    
-    protected String resposta[];
-    protected int c;
+
+    ArrayList<Resposta> resposta;
     protected Resposta resp;
     protected RespostaSimples simples;
     protected RespostaData data;
     protected RespostaHora hora;
     protected RespostaContador contador;
     protected RespostaAleatoria piada;
-    
+
     public ChatBot() {
-        
-        this.resposta = null;
-        this.c = 0;
-        
+
+        resposta = new ArrayList<>();
+
     }
-    
+
     public void adiciona(Resposta r) {
+
+            resposta.add(r);
+
+    }
+
+    public String processar(String texto) {
         
-        for(int i = 0; i > c; i++) {
+        for(Resposta r: resposta) {
             
-            this.resposta[i] = r.toString();
+            if(r.verifica(texto)) {
+                
+                String resp = r.produz();
+                return resp;
+                
+            }
             
         }
         
+        return "Desculpa, não entendi! :(";
+
     }
-    public String processar(String texto) {
-        
-        if(resposta.equals("nome") == simples.verifica(texto)) {
-        
-            return simples.produz();
-            
-    } else if (resposta.equals("dia") == data.verifica(texto)) {
-        
-        return data.produz();
-        
-    } else if (resposta.equals("horas") == hora.verifica(texto)) {
-        
-        return hora.produz();
-        
-    } else if (resposta.equals("conta") == contador.verifica(texto)) {
-        
-        return contador.produz();
-        
-    } else if (resposta.equals("piada") == piada.verifica(texto)) {
-        
-        return piada.produz();
-        
-    } else {
-        
-        return "";
-        
-    }
-    
-    }
-    
 }

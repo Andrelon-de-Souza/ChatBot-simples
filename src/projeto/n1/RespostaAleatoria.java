@@ -1,15 +1,16 @@
 package projeto.n1;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class RespostaAleatoria extends Resposta {
     
-    protected ArrayList arrayPiada;
+    private ArrayList piadas;
     
-    public RespostaAleatoria(String piada, ArrayList<String> arrayPiada) {
+    public RespostaAleatoria(String entrada, ArrayList<String> piadas) {
         
-       super(piada);
-       this.arrayPiada = arrayPiada;
+       super(entrada);
+       this.piadas = piadas;
         
     }
     @Override
@@ -17,21 +18,24 @@ public class RespostaAleatoria extends Resposta {
         
         String palavras[] = piada.split(" ");
         
-        if(palavras.equals("piada")) {
+        for(int i = 0; i < palavras.length; i++) {
+        
+        if(palavras[i].equals(entrada)) {
             
                 return true;
                 
-    }else{
-            
-            return false;
-            
+    }
+        
         }
+        
+        return false;
         
     }
     @Override
-    public String produz() {
+    public String produz() { 
         
-        return "" + arrayPiada;
+        Collections.shuffle(piadas);
+        return "" + piadas.get(0);
         
     }
     
