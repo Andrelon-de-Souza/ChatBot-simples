@@ -5,12 +5,6 @@ import java.util.ArrayList;
 public class ChatBot {
 
     ArrayList<Resposta> resposta;
-    protected Resposta resp;
-    protected RespostaSimples simples;
-    protected RespostaData data;
-    protected RespostaHora hora;
-    protected RespostaContador contador;
-    protected RespostaAleatoria piada;
 
     public ChatBot() {
 
